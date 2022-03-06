@@ -6,10 +6,14 @@ module.exports = {
     path: path.join(__dirname, "build"),
     filename: "bundle.js",
   },
+  mode: "development",
   module: {
     rules: [
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
-      { test: /\.file$/, use: ["file-loader"] },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
   },
 };

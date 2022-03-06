@@ -1,8 +1,14 @@
 import "./index.css";
-import "./file.png";
+import img from "../img/logo.png";
 
 const note = JSON.parse(localStorage.getItem("todonote")) || [];
 const button = document.getElementById("note_btn");
+const webpack_logo = document.getElementById("navbar");
+
+let logotag = document.createElement("img");
+logotag.setAttribute("class", "logo");
+logotag.src = img;
+webpack_logo.append(logotag);
 
 button.addEventListener("click", addNote);
 function addNote(e) {
